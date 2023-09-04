@@ -32,7 +32,7 @@ export function App() {
   }, []);
 
   return !isLoading ? (
-    <div className={`w-full min-h-screen pt-20 pb-6 px-10 ${context.theme}-app-theme`}>
+    <div className={`w-full min-h-screen ${context.theme}-app-theme`}>
       <Text>This is a cool board view template!</Text>
     </div>
   ) : (
