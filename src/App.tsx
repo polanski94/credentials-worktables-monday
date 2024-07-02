@@ -32,12 +32,12 @@ export function App() {
   }, []);
 
   return !isLoading ? (
-    <div className={`w-full min-h-screen ${context.theme}-app-theme`}>
+    <div className={`min-h-screen w-full ${context.theme}-app-theme`}>
       <Text>This is a cool board view template!</Text>
     </div>
   ) : (
     <div
-      className={`w-full min-h-screen flex flex-col justify-center items-center gap-2 ${context.theme}-app-theme`}
+      className={`flex min-h-screen w-full flex-col items-center justify-center gap-2 ${context.theme}-app-theme`}
     >
       <Loader size={Loader.sizes.MEDIUM} color={Loader.colors.DARK} />
       <Text>Loading...</Text>
