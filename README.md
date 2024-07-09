@@ -22,6 +22,12 @@ Some packages may be outdated, so you can update them by with the following comm
 yarn upgrade
 ```
 
+Delete the existing git configuration file running this command:<br>
+
+```
+sudo rm -rf .git
+```
+
 To run the project use the command below:<br>
 
 ```
