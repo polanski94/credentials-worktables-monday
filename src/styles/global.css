@@ -1,3 +1,4 @@
+/* Imports all the monday.com's colors from the monday-ui-style library */
 @import url('../../node_modules/monday-ui-style/src/index.scss');
 
 @tailwind base;
