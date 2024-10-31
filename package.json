@@ -10,6 +10,10 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "docx": "^9.0.2",
+    "docx-js": "^1.0.1",
+    "file-saver": "^2.0.5",
+    "mammoth": "^1.8.0",
     "monday-sdk-js": "^0.4.12",
     "monday-ui-react-core": "^2.116.0",
     "react": "^18.3.1",
