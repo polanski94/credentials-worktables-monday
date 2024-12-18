@@ -52,38 +52,24 @@ This template extends some of the [monday's component library](https://style.mon
 
 To successfully build your front-end project, you'll need to follow the guide below.
 
-### Step 1 - Modify Vite configuration file
+### Run build script
 
-In the `vite.config.ts` file there is a configuration object called <strong>`define`</strong>, this object needs o be commented before running the build script.
+The build workflow was created to automate the build process, so you don't need to worry about the old Vite configuration file.
 
-Your Vite configuration file should look like this:
+You just need to <strong>run the build command</strong>, by running the `yarn build` command in your terminal.
 
-```javascript
-// vite.config.ts
+### The zip `dist` structure
 
-import { defineConfig } from 'vite';
-import react from '@vitejs/plugin-react';
+> [!NOTE]  
+> On windows the zip process requires the `7z` command to be installed on your machine. The script will automatically install it if it's not present. But you may need to add to your system environment variables.
 
-// https://vitejs.dev/config/
-export default defineConfig({
-  plugins: [react()],
-  server: {
-    port: 3000,
-  },
-  // define: {
-  //   global: {},
-  // },
-});
-```
+The script will create a zip file with the `dist` folder, this zip file will be named `dist-current.zip`.
 
-### Step 2 - Run build script
+If you want to keep track of the previous builds, the script will rename the current zip file to `dist-old-<timestamp>.zip`.
 
-The next step to generate the build is to <strong>run the build command</strong>, you can do so by running the `yarn build` command in your terminal.
+### Upload to monday.com
 
-### Step 3 - Zip the `dist` folder
+After building step is completed, you'll need to upload the zip file to monday.com.
 
-Once the build has been completed, a folder named `dist` will show in your project's root directory. You'll need to compress this folder to be able to upload it to monday.com.
-
-### Step 4 - Reset the Vite configuration file
-
-After building and compressing, you need make sure to configure your `vite.config.ts` back to the default values, so you can run the app locally when you want to.
+> [!NOTE]  
+> Some files name may conflict with the monday.com's compilation process, so you may need to rename them. For example, the `worktables_logo_blue@0.5x.png` file should be renamed to `worktables_logo_blue05.png`.

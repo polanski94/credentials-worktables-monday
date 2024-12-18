@@ -1,6 +1,7 @@
 import ReactDOM from 'react-dom/client';
 
 import { App } from './App';
+import '@vibe/core/tokens';
 
 import './styles/global.css';
 

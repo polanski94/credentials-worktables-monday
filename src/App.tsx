@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Loader, Text } from 'monday-ui-react-core';
+import { Loader, Text } from '@vibe/core';
 
 import { monday } from './lib/monday';
 import { useContext } from './store/context';
