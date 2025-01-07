@@ -3,6 +3,7 @@ import { Loader, Text } from '@vibe/core';
 
 import { monday } from './lib/monday';
 import { useContext } from './store/context';
+import { Credentials } from './components/credentials';
 
 interface MondayContext {
   data: {
@@ -19,10 +20,10 @@ export function App() {
   async function getPortalContext() {
     setIsLoading(true);
 
-    const response = (await monday.get('context')) as MondayContext;
+    /* const response = (await monday.get('context')) as MondayContext;
 
     context.setTheme(response.data.theme);
-    context.setBoardId(response.data.boardId);
+    context.setBoardId(response.data.boardId); */
 
     setIsLoading(false);
   }
@@ -33,7 +34,7 @@ export function App() {
 
   return !isLoading ? (
     <div className={`min-h-screen w-full ${context.theme}-app-theme`}>
-      <Text>This is a cool board view template!</Text>
+      <Credentials />
     </div>
   ) : (
     <div
