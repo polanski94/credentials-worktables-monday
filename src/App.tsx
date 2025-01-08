@@ -1,36 +1,13 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { Loader, Text } from '@vibe/core';
 
-import { monday } from './lib/monday';
 import { useContext } from './store/context';
 import { Credentials } from './components/credentials';
-
-interface MondayContext {
-  data: {
-    boardId: number;
-    theme: string;
-  };
-}
 
 export function App() {
   const [isLoading, setIsLoading] = useState(true);
 
   const context = useContext();
-
-  async function getPortalContext() {
-    setIsLoading(true);
-
-    /* const response = (await monday.get('context')) as MondayContext;
-
-    context.setTheme(response.data.theme);
-    context.setBoardId(response.data.boardId); */
-
-    setIsLoading(false);
-  }
-
-  useEffect(() => {
-    getPortalContext();
-  }, []);
 
   return !isLoading ? (
     <div className={`min-h-screen w-full ${context.theme}-app-theme`}>
