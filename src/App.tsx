@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Loader, Text } from '@vibe/core';
 
 import { useContext } from './store/context';
@@ -8,6 +8,16 @@ export function App() {
   const [isLoading, setIsLoading] = useState(true);
 
   const context = useContext();
+
+  async function getPortalContext() {
+    setIsLoading(true);
+
+    setIsLoading(false);
+  }
+
+  useEffect(() => {
+    getPortalContext();
+  }, []);
 
   return !isLoading ? (
     <div className={`min-h-screen w-full ${context.theme}-app-theme`}>
