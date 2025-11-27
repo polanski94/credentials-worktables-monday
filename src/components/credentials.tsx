@@ -29,7 +29,7 @@ export function Credentials() {
       credentialsSchema.parse({
         serviceName,
         token,
-        refreshToken: hasRefreshToken ? refreshToken : undefined,
+        refreshToken: undefined,
       });
 
       const url = new URL(window.location.href);
@@ -42,7 +42,7 @@ export function Credentials() {
         {
           name: serviceName,
           token,
-          refreshToken: hasRefreshToken ? refreshToken : '',
+          refreshToken: undefined,
         },
         redirectUrl,
       );
