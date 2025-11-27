@@ -38,14 +38,12 @@ export function Credentials() {
         throw new Error('Redirect URL not found in the query parameters.');
       }
 
-      const result = await saveCredentials(
-        {
-          name: serviceName,
-          token,
-          refreshToken: undefined,
-        },
-        redirectUrl,
-      );
+      const credentialsPayload: { name: string; token: string; refreshToken?: string } = {
+        name: serviceName,
+        token,
+      };
+
+      const result = await saveCredentials(credentialsPayload, redirectUrl);
 
       if (result.status === 200) {
         setToastMessage(`Credentials saved successfully. Redirecting to monday.com...`);
