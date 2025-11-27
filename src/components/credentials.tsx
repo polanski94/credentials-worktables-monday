@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Button, Checkbox, Text } from '@vibe/core';
+import { Button,  Text } from '@vibe/core';
 import { z } from 'zod';
 import { saveCredentials } from '../service/credentials';
 import Toast from './Toast';
@@ -14,8 +14,8 @@ const credentialsSchema = z.object({
 export function Credentials() {
   const [serviceName, setServiceName] = useState('');
   const [token, setToken] = useState('');
-  const [refreshToken, setRefreshToken] = useState('');
-  const [hasRefreshToken, setHasRefreshToken] = useState(false);
+ /*  const [refreshToken, setRefreshToken] = useState('');
+  const [hasRefreshToken, setHasRefreshToken] = useState(false); */
   const [loading, setLoading] = useState(false);
   const [showToast, setShowToast] = useState(false);
   const [toastMessage, setToastMessage] = useState('');
