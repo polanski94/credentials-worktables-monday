@@ -114,14 +114,14 @@ export function Credentials() {
           />
         </div>
 
-        <div className="mb-4 flex items-center gap-2">
+        {/* <div className="mb-4 flex items-center gap-2">
           <Checkbox
             checked={hasRefreshToken}
             onChange={(e) => setHasRefreshToken(e.target.checked)}
           />
           <Text>Has refresh token?</Text>
-        </div>
-
+        </div> */}
+        {/* 
         {hasRefreshToken && (
           <div className="mb-4">
             <Text className="mb-2 block">Refresh Token</Text>
@@ -132,7 +132,7 @@ export function Credentials() {
               onChange={(e) => setRefreshToken(e.target.value)}
             />
           </div>
-        )}
+        )} */}
 
         <Button
           onClick={handleSubmit}
